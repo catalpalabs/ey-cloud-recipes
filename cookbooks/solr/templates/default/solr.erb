@@ -31,6 +31,8 @@ fi
 #set large memory for production 
 if [ "$RAILS_ENV" == 'production' ]; then
   MEM_SETTINGS='-Xms1g -Xmx7g'
+elif [ "$RAILS_ENV" == 'staging' ]; then
+  MEM_SETTINGS='-Xmx1536m'
 fi
 
 nohup java $MEM_SETTINGS -Djava.net.preferIPv4Stack=true -Dsolr.solr.home=solr -jar start.jar > /var/log/engineyard/solr/solr.log 2> /var/log/engineyard/solr/solr.err.log &
