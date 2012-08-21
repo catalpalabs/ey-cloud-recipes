@@ -32,7 +32,7 @@ fi
 if [ "$RAILS_ENV" == 'production' ]; then
   MEM_SETTINGS='-Xms8g -Xmx32g'
 elif [ "$RAILS_ENV" == 'staging' ]; then
-  MEM_SETTINGS='-Xmx1536m'
+  MEM_SETTINGS='-Xmx3072m'
 fi
 
 nohup java $MEM_SETTINGS -Djava.net.preferIPv4Stack=true -Dsolr.solr.home=solr -jar start.jar > /var/log/engineyard/solr/solr.log 2> /var/log/engineyard/solr/solr.err.log &
