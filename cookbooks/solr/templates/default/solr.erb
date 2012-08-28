@@ -30,7 +30,7 @@ fi
 
 #set large memory for production 
 if [ "$RAILS_ENV" == 'production' ]; then
-  MEM_SETTINGS='-Xms8g -Xmx64g'
+  MEM_SETTINGS='-Xms8g -Xmx32g'
 elif [ "$RAILS_ENV" == 'staging' ]; then
   MEM_SETTINGS='-Xmx2048m'
 fi
